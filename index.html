@@ -4,153 +4,350 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Keystone Investment Partners</title>
-  <meta name="description" content="Keystone Investment Partners — a member‑managed investment club based in Cambridge, MA." />
-  <meta property="og:title" content="Keystone Investment Partners"/>
-  <meta property="og:description" content="A student‑run, non‑commercial investment club exploring public markets."/>
-  <meta name="theme-color" content="#2f3e5e"/>
+  <meta name="description" content="Keystone Investment Partners — disciplined investing and enduring partnerships. Contact Joshua Chen, Marre Gattnar, or Mert Iravul." />
+  <meta name="theme-color" content="#2f3e58" />
+
   <style>
-    :root {
-      --ink: #2f3e5e;      /* navy to match logo */
-      --ink-2: #475569;    /* slate */
-      --paper: #ffffff;
-      --line: #e5e7eb;
-      --accent: #6b86c5;   /* muted steel blue */
+    :root{
+      --ink:#24324a;
+      --accent:#425a86;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --ring:#e5e9f2;
+      --shadow:0 10px 25px rgba(31,41,55,.08), 0 2px 6px rgba(31,41,55,.06);
+      --radius:16px;
+      --radius-sm:12px;
+      --radius-lg:22px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink);
+      background:radial-gradient(1200px 600px at 20% -10%, #eef2f9 0, transparent 70%), var(--bg);
+      line-height:1.6;
+    }
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:1024px;margin:0 auto;padding:24px}
-    header{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:12px 0 6px;border-bottom:1px solid var(--line)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:44px;width:auto}
-    .brand .wordmark{font-weight:800;letter-spacing:.3px;font-size:20px}
-    nav a{margin-left:16px;color:var(--ink-2)}
-    .hero{display:grid;grid-template-columns:1fr;gap:12px;padding:42px 0}
-    .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0}
-    .lead{color:var(--ink-2);max-width:70ch}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media (min-width:860px){.grid{grid-template-columns:1fr 1fr}}
-    .card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fcfcfd}
-    h2{font-size:clamp(22px,4vw,28px);margin:0 0 8px}
-    h3{margin:12px 0 6px}
-    ul{margin:8px 0 0 18px}
-    .pill{display:inline-block;font-size:12px;padding:2px 10px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;color:#0f172a}
-    .k-table{width:100%;border-collapse:collapse}
-    .k-table th,.k-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left}
-    footer{margin-top:48px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-2);font-size:14px}
-    .muted{color:var(--ink-2)}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid var(--ink);color:#fff;background:var(--ink)}
-    .cta.secondary{background:#fff;color:var(--ink)}
-    .section{padding:16px 0}
-    .contact-card{display:grid;grid-template-columns:1fr;gap:12px}
-    @media (min-width:720px){.contact-card{grid-template-columns:1fr 1fr}}
-    .badge{font-size:12px;margin-left:6px;color:var(--ink-2)}
-    .address{white-space:pre-line}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    /* Header / Nav */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(180%) blur(8px);
+      background:rgba(255,255,255,.8);
+      border-bottom:1px solid var(--ring);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      min-height:72px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.05rem}
+    .brand img{height:36px;width:auto;display:block;filter:drop-shadow(0 2px 2px rgba(0,0,0,.05))}
+    .menu{display:flex;gap:22px;align-items:center;font-weight:600}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 16px;border-radius:999px;border:1px solid var(--accent);
+      background:var(--accent);color:#fff;font-weight:700;letter-spacing:.01em;
+      box-shadow:var(--shadow);
+    }
+    .btn:hover{filter:brightness(1.03)}
+    .btn.secondary{background:#fff;color:var(--accent);border-color:var(--ring);box-shadow:none}
+    /* Hero */
+    .hero{padding:72px 0 36px}
+    .hero-card{
+      background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      border:1px solid var(--ring);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      padding:36px 28px;
+      display:flex;flex-wrap:wrap;align-items:center;gap:28px;justify-content:space-between;
+    }
+    .hero h1{font-size:clamp(1.8rem, 1.2rem + 2vw, 2.6rem);line-height:1.15;margin:0}
+    .hero p{color:var(--muted);max-width:62ch;margin:.5rem 0 0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    /* Sections */
+    section{padding:42px 0}
+    section h2{font-size:1.6rem;margin:0 0 14px}
+    .sub{color:var(--muted);margin:0 0 22px}
+    .grid{display:grid;gap:18px}
+    @media (min-width: 840px){
+      .grid.cols-3{grid-template-columns:repeat(3, 1fr)}
+      .grid.cols-2{grid-template-columns:repeat(2, 1fr)}
+    }
+    .card{
+      background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);
+      padding:20px;box-shadow:var(--shadow)
+    }
+    .k-pill{display:inline-block;background:#eef2fb;color:#435a86;border:1px solid #dfe6f6;padding:4px 10px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.02em}
+    .muted{color:var(--muted)}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:.35rem 0}
+    .kv{display:grid;grid-template-columns:120px 1fr;gap:10px 16px}
+    .kv div{padding:8px 0;border-bottom:1px dashed #e6eaf3}
+    .kv div strong{color:#374151}
+    footer{
+      background:#0f172a;color:#e5e7eb;margin-top:26px
+    }
+    footer a{color:#cbd5e1}
+    .footer-wrap{padding:22px 0}
+    .small{font-size:.92rem}
+    /* Mobile tweaks */
+    .menu-toggle{display:none}
+    @media (max-width: 820px){
+      .menu{display:none}
+      .menu.open{display:flex;flex-direction:column;align-items:flex-start;padding:12px 0}
+      .menu-toggle{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:10px;border:1px solid var(--ring);background:#fff}
+      .hero-card{padding:28px}
+    }
+    /* Subtle focus ring */
+    :focus-visible{outline:3px solid #c3d3ff;outline-offset:2px;border-radius:8px}
+    @media (prefers-color-scheme: dark){
+      body{background:linear-gradient(180deg,#0b1220 0,#0f172a 60%,#0f172a 100%);color:#e5e7eb}
+      header{background:rgba(15,23,42,.75);border-color:#1e293b}
+      .hero-card, .card{background:#0b1220;border-color:#1e293b}
+      .sub,.muted{color:#a3aab6}
+      .btn.secondary{background:transparent;color:#d7def0;border-color:#334155}
+      a{color:#93c5fd}
+      .kv div{border-bottom-color:#1f2a3a}
+      .k-pill{background:#0f1a35;border-color:#203058;color:#c9d7ff}
+      footer{background:#0b1220;color:#9fb0c6}
+      footer a{color:#a7c1ff}
+    }
   </style>
+
+  <!-- Replace src with your logo file path. If you place `keystone-logo.png` next to index.html, this will work out of the box. -->
+  <link rel="icon" href="keystone-logo.png" />
+  <script>
+    // Simple mobile menu toggle & smooth anchor scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('#menuToggle');
+      const menu = document.querySelector('#menu');
+      btn?.addEventListener('click', () => menu.classList.toggle('open'));
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+          const id=a.getAttribute('href');
+          const el=document.querySelector(id);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}) }
+          menu?.classList.remove('open');
+        });
+      });
+    });
+  </script>
+
+  <!-- Structured data for richer previews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "InvestmentOrDeposit",
+    "name": "Keystone Investment Partners",
+    "url": "https://YOUR-GITHUB-PAGES-URL",
+    "logo": "https://YOUR-GITHUB-PAGES-URL/keystone-logo.png",
+    "email": "mailto:keystonepartnercontact@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "28 Dewolfe Street",
+      "addressLocality": "Cambridge",
+      "addressRegion": "MA",
+      "postalCode": "02138",
+      "addressCountry": "US"
+    },
+    "contactPoint": [
+      {"@type":"ContactPoint","telephone":"+1-515-715-8677","contactType":"Partner","name":"Joshua Chen"},
+      {"@type":"ContactPoint","telephone":"+1-415-936-6305","contactType":"Partner","name":"Marre Gattnar"},
+      {"@type":"ContactPoint","telephone":"+1-617-201-7016","contactType":"Partner","name":"Mert Iravul"}
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <!-- Place your logo file at /assets/keystone-logo.png (or .jpg) in the repo -->
-        <img src="assets/keystone-logo.png" alt="Keystone logo" onerror="this.src='assets/keystone-logo.jpg'">
-        <div class="wordmark">Keystone Investment Partners <span class="badge">Investment Club</span></div>
-      </div>
-      <nav>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img src="keystone-logo.png" alt="Keystone Investment Partners logo" />
+        <span>Keystone Investment Partners</span>
+      </a>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">Menu</button>
+
+      <nav id="menu" class="menu" aria-label="Main">
         <a href="#about">About</a>
         <a href="#values">Values</a>
-        <a href="#partners">Co‑Partners</a>
+        <a href="#partners">Co-Partners</a>
         <a href="#strategies">Past Strategies</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn secondary">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <section class="hero" id="about">
-      <h1>Learning Markets, Together</h1>
-      <p class="lead">Keystone Investment Partners is a member‑managed investment club based in Cambridge, Massachusetts. We explore public markets through collaborative research and shared decision‑making.</p>
-      <div>
-        <a class="cta" href="#contact">Get in touch</a>
-        <a class="cta secondary" href="#disclosures" style="margin-left:8px">Disclosures</a>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div>
+            <span class="k-pill">We are Keystone Investment Partners</span>
+            <h1>Disciplined investing. Enduring partnerships.</h1>
+            <p>We pursue clear, research-driven opportunities and align incentives with our partners to create durable value across market cycles.</p>
+            <div class="hero-actions">
+              <a class="btn" href="mailto:keystonepartnercontact@gmail.com">Email Us</a>
+              <a class="btn secondary" href="#partners">Meet the Co-Partners</a>
+            </div>
+          </div>
+          <img src="keystone-logo.png" alt="Keystone mountains mark" style="height:72px;width:auto;opacity:.92" />
+        </div>
       </div>
     </section>
 
-    <section id="values" class="section">
-      <div class="grid">
-        <div class="card">
-          <h2>Our Values</h2>
-          <ul>
-            <li><strong>Humility:</strong> we respect uncertainty and size positions accordingly.</li>
-            <li><strong>Evidence‑based:</strong> we favor data, base rates, and documented processes.</li>
-            <li><strong>Transparency:</strong> clear votes, recorded minutes, unitized capital accounts.</li>
-            <li><strong>Stewardship:</strong> cost‑aware, tax‑aware execution and simple portfolios.</li>
-            <li><strong>Long‑term:</strong> compounding over headline‑chasing.</li>
+    <!-- About -->
+    <section id="about">
+      <div class="container grid cols-2">
+        <article class="card">
+          <h2>About Keystone</h2>
+          <p class="sub">Keystone Investment Partners is a research-first investment firm dedicated to thoughtful risk management, transparency, and long-term partnership.</p>
+          <ul class="list">
+            <li>Independent, thesis-driven idea generation</li>
+            <li>Repeatable processes and clear accountability</li>
+            <li>Capital preservation with asymmetric upside</li>
           </ul>
+        </article>
+        <aside class="card">
+          <h2>At a Glance</h2>
+          <div class="kv">
+            <div><strong>Location</strong></div><div>28 Dewolfe Street, Cambridge, MA 02138</div>
+            <div><strong>Email</strong></div><div><a href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></div>
+            <div><strong>Phone</strong></div><div>
+              <a href="tel:+15157158677">+1 (515) 715-8677</a> &nbsp;•&nbsp;
+              <a href="tel:+14159366305">+1 (415) 936-6305</a> &nbsp;•&nbsp;
+              <a href="tel:+16172017016">+1 (617) 201-7016</a>
+            </div>
+            <div><strong>Map</strong></div><div><a target="_blank" rel="noopener" href="https://maps.google.com/?q=28%20Dewolfe%20Street%20Cambridge%20MA%2002138">Open in Google Maps</a></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section id="values">
+      <div class="container">
+        <h2>Our Values</h2>
+        <p class="sub">Principles that guide every decision.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Integrity</h3>
+            <p class="muted">We do what we say, communicate clearly, and earn trust by being consistent and candid.</p>
+          </div>
+          <div class="card">
+            <h3>Research Rigor</h3>
+            <p class="muted">Decisions originate from deep, bottom-up analysis and disciplined risk controls.</p>
+          </div>
+          <div class="card">
+            <h3>Alignment</h3>
+            <p class="muted">We invest alongside our partners and prioritize outcomes that compound over time.</p>
+          </div>
+          <div class="card">
+            <h3>Risk Management</h3>
+            <p class="muted">Protecting capital through scenario analysis, position sizing, and portfolio balance.</p>
+          </div>
+          <div class="card">
+            <h3>Transparency</h3>
+            <p class="muted">Clear reporting, repeatable processes, and measurable objectives.</p>
+          </div>
+          <div class="card">
+            <h3>Long-Term Focus</h3>
+            <p class="muted">We prefer durable cash flows and structural advantages over short-term noise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Co-Partners -->
+    <section id="partners">
+      <div class="container">
+        <h2>Co-Partners</h2>
+        <p class="sub">Reach out directly to any of us.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Joshua Chen</h3>
+            <p class="muted">Partner</p>
+            <p><strong>Phone:</strong> <a href="tel:+15157158677">+1 (515) 715-8677</a></p>
+            <p><strong>Email:</strong> <a href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></p>
+          </div>
+          <div class="card">
+            <h3>Marre Gattnar</h3>
+            <p class="muted">Partner</p>
+            <p><strong>Phone:</strong> <a href="tel:+14159366305">+1 (415) 936-6305</a></p>
+            <p><strong>Email:</strong> <a href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></p>
+          </div>
+          <div class="card">
+            <h3>Mert Iravul</h3>
+            <p class="muted">Partner</p>
+            <p><strong>Phone:</strong> <a href="tel:+16172017016">+1 (617) 201-7016</a></p>
+            <p><strong>Email:</strong> <a href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Strategies -->
+    <section id="strategies">
+      <div class="container grid cols-2">
+        <div class="card">
+          <h2>Past Strategies</h2>
+          <p class="muted">None for now. We will publish summaries as initiatives conclude and reporting is finalized.</p>
         </div>
         <div class="card">
-          <h2>How We Operate</h2>
-          <ul>
-            <li>Decisions by member vote per our partnership agreement.</li>
-            <li>Authorized members execute trades on behalf of the partnership.</li>
-            <li>Unitized capital accounting for fair contributions and withdrawals.</li>
-            <li>Assets held at a U.S. brokerage in the partnership’s name (EIN).</li>
-          </ul>
+          <h2>Stay in Touch</h2>
+          <p>For partnership inquiries, allocation discussions, or to request materials, please contact us.</p>
+          <div class="hero-actions">
+            <a class="btn" href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a>
+            <a class="btn secondary" href="tel:+16172017016">Call a Partner</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="partners" class="section">
-      <h2>Co‑Partners</h2>
-      <table class="k-table" aria-label="Co‑partners">
-        <thead>
-          <tr><th>Name</th><th>Phone</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Joshua Chen</td><td><a href="tel:+15157158677">(515) 715‑8677</a></td></tr>
-          <tr><td>Marre Gattnar</td><td><a href="tel:+14159366305">(415) 936‑6305</a></td></tr>
-          <tr><td>Mert Iravul</td><td><a href="tel:+16172017016">(617) 201‑7016</a></td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="strategies" class="section card">
-      <h2>Past Strategies</h2>
-      <p class="muted">None published yet — this section will house post‑mortems and research notes as they’re finalized.</p>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="contact-card card">
-        <div>
-          <h3>Email</h3>
-          <p><a href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></p>
-          <h3>Mailing Address</h3>
-          <p class="address">28 Dewolfe Street
-Cambridge, MA 02138</p>
-        </div>
-        <div>
-          <h3>General Inquiries</h3>
-          <p class="muted">For research feedback and club participation only. We can’t discuss individual portfolios.</p>
-          <p><a class="cta secondary" href="#partners">Call a co‑partner</a></p>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Address</h3>
+            <p>
+              28 Dewolfe Street<br/>
+              Cambridge, MA 02138
+            </p>
+            <p><a target="_blank" rel="noopener" href="https://maps.google.com/?q=28%20Dewolfe%20Street%20Cambridge%20MA%2002138">View on Maps</a></p>
+          </div>
+          <div class="card">
+            <h3>Email</h3>
+            <p><a class="btn secondary" href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></p>
+          </div>
+          <div class="card">
+            <h3>Phones</h3>
+            <p><a href="tel:+15157158677">Joshua Chen — (515) 715-8677</a></p>
+            <p><a href="tel:+14159366305">Marre Gattnar — (415) 936-6305</a></p>
+            <p><a href="tel:+16172017016">Mert Iravul — (617) 201-7016</a></p>
+          </div>
         </div>
       </div>
     </section>
+  </main>
 
-    <section id="disclosures" class="section card">
-      <h2>Disclosures</h2>
-      <p class="muted">Keystone Investment Partners is a private, member‑managed investment club. This site is for informational and educational purposes only. It is <strong>not</strong> an offer to buy or sell securities, a solicitation of clients, or personalized investment advice. Keystone does not provide advisory services to the public or accept compensation for advice.</p>
-    </section>
+  <footer>
+    <div class="container footer-wrap">
+      <div class="small">
+        © <span id="year"></span> Keystone Investment Partners • All rights reserved.
+        <span style="opacity:.7">This site is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security.</span>
+      </div>
+    </div>
+  </footer>
 
-    <footer>
-      <div>© <span id="y"></span> Keystone Investment Partners • Cambridge, MA</div>
-      <div>Last updated: <span id="d"></span></div>
-    </footer>
-  </div>
   <script>
-    const now=new Date();
-    document.getElementById('y').textContent=now.getFullYear();
-    document.getElementById('d').textContent=now.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+    // set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
