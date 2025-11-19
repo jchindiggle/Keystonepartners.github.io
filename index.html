@@ -3,110 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Student investment club — non‑commercial, educational site." />
-  <!-- Remove the next line if you want search engines to index your site -->
-  <meta name="robots" content="noindex, nofollow" />
   <title>Keystone Investment Partners</title>
+  <meta name="description" content="Keystone Investment Partners — a member‑managed investment club based in Cambridge, MA." />
+  <meta property="og:title" content="Keystone Investment Partners"/>
+  <meta property="og:description" content="A student‑run, non‑commercial investment club exploring public markets."/>
+  <meta name="theme-color" content="#2f3e5e"/>
   <style>
-    :root { --fg:#0f172a; --muted:#475569; --bg:#ffffff; --accent:#0ea5e9; }
+    :root {
+      --ink: #2f3e5e;      /* navy to match logo */
+      --ink-2: #475569;    /* slate */
+      --paper: #ffffff;
+      --line: #e5e7eb;
+      --accent: #6b86c5;   /* muted steel blue */
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,Noto Sans,sans-serif}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:960px;margin:0 auto;padding:24px}
-    header{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:16px 0}
-    .logo{font-weight:700;letter-spacing:.5px}
-    nav a{margin-left:16px;color:var(--muted)}
-    .hero{padding:56px 0}
-    h1{font-size:clamp(28px,5vw,40px);margin:0 0 8px}
-    h2{font-size:clamp(22px,4vw,28px);margin:24px 0 8px}
-    p.lead{color:var(--muted);max-width:65ch;margin:0}
+    .wrap{max-width:1024px;margin:0 auto;padding:24px}
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:12px 0 6px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:44px;width:auto}
+    .brand .wordmark{font-weight:800;letter-spacing:.3px;font-size:20px}
+    nav a{margin-left:16px;color:var(--ink-2)}
+    .hero{display:grid;grid-template-columns:1fr;gap:12px;padding:42px 0}
+    .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0}
+    .lead{color:var(--ink-2);max-width:70ch}
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media (min-width:800px){.grid{grid-template-columns:1fr 1fr}}
-    .card{border:1px solid #e2e8f0;border-radius:14px;padding:18px}
-    ul{margin:0 0 0 18px}
-    footer{margin-top:48px;padding:24px 0;color:var(--muted);font-size:14px;border-top:1px solid #e2e8f0}
-    .badge{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid #e2e8f0;border-radius:999px;color:#0f172a;background:#f8fafc}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid #0ea5e9;color:#fff;background:#0ea5e9}
-    .cta.secondary{background:#fff;color:#0ea5e9}
-    .muted{color:var(--muted)}
+    @media (min-width:860px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fcfcfd}
+    h2{font-size:clamp(22px,4vw,28px);margin:0 0 8px}
+    h3{margin:12px 0 6px}
+    ul{margin:8px 0 0 18px}
+    .pill{display:inline-block;font-size:12px;padding:2px 10px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;color:#0f172a}
+    .k-table{width:100%;border-collapse:collapse}
+    .k-table th,.k-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left}
+    footer{margin-top:48px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-2);font-size:14px}
+    .muted{color:var(--ink-2)}
+    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid var(--ink);color:#fff;background:var(--ink)}
+    .cta.secondary{background:#fff;color:var(--ink)}
     .section{padding:16px 0}
-    code{background:#f1f5f9;border-radius:6px;padding:2px 6px}
+    .contact-card{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width:720px){.contact-card{grid-template-columns:1fr 1fr}}
+    .badge{font-size:12px;margin-left:6px;color:var(--ink-2)}
+    .address{white-space:pre-line}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">YOUR CLUB NAME <span class="badge">Investment Club</span></div>
+      <div class="brand">
+        <!-- Place your logo file at /assets/keystone-logo.png (or .jpg) in the repo -->
+        <img src="assets/keystone-logo.png" alt="Keystone logo" onerror="this.src='assets/keystone-logo.jpg'">
+        <div class="wordmark">Keystone Investment Partners <span class="badge">Investment Club</span></div>
+      </div>
       <nav>
         <a href="#about">About</a>
-        <a href="#how">How We Operate</a>
-        <a href="#research">Research</a>
+        <a href="#values">Values</a>
+        <a href="#partners">Co‑Partners</a>
+        <a href="#strategies">Past Strategies</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="about">
       <h1>Learning Markets, Together</h1>
-      <p class="lead">A student-run investment club exploring public markets through collaborative research and shared decision‑making. Non‑commercial and educational.</p>
-      <div style="margin-top:16px">
-        <a class="cta" href="#research">Read Research</a>
+      <p class="lead">Keystone Investment Partners is a member‑managed investment club based in Cambridge, Massachusetts. We explore public markets through collaborative research and shared decision‑making.</p>
+      <div>
+        <a class="cta" href="#contact">Get in touch</a>
         <a class="cta secondary" href="#disclosures" style="margin-left:8px">Disclosures</a>
       </div>
     </section>
 
-    <section id="about" class="section grid">
-      <div class="card">
-        <h2>What We Do</h2>
-        <ul>
-          <li>Run paper and live portfolios owned by the partnership.</li>
-          <li>Study portfolio construction, risk, and behavioral finance.</li>
-          <li>Publish general, <em>not personalized</em>, educational research.</li>
-        </ul>
+    <section id="values" class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Our Values</h2>
+          <ul>
+            <li><strong>Humility:</strong> we respect uncertainty and size positions accordingly.</li>
+            <li><strong>Evidence‑based:</strong> we favor data, base rates, and documented processes.</li>
+            <li><strong>Transparency:</strong> clear votes, recorded minutes, unitized capital accounts.</li>
+            <li><strong>Stewardship:</strong> cost‑aware, tax‑aware execution and simple portfolios.</li>
+            <li><strong>Long‑term:</strong> compounding over headline‑chasing.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>How We Operate</h2>
+          <ul>
+            <li>Decisions by member vote per our partnership agreement.</li>
+            <li>Authorized members execute trades on behalf of the partnership.</li>
+            <li>Unitized capital accounting for fair contributions and withdrawals.</li>
+            <li>Assets held at a U.S. brokerage in the partnership’s name (EIN).</li>
+          </ul>
+        </div>
       </div>
-      <div class="card">
-        <h2>What We Don’t Do</h2>
-        <ul>
-          <li>No client onboarding or outside-asset management.</li>
-          <li>No individualized investment advice.</li>
-          <li>No compensation for advice or referrals.</li>
-        </ul>
-      </div>
     </section>
 
-    <section id="how" class="section">
-      <h2>How We Operate</h2>
-      <p class="muted">We make decisions by member vote per our partnership agreement. Capital accounts are unitized for fairness; contributions and withdrawals are processed at current NAV. Trading is executed by authorized members only.</p>
-      <ul>
-        <li><strong>Meetings:</strong> Regular sessions to review research and votes.</li>
-        <li><strong>Custody:</strong> All assets held at a U.S. brokerage in the partnership’s name.</li>
-        <li><strong>Records:</strong> Minutes and member capital ledgers maintained internally.</li>
-      </ul>
+    <section id="partners" class="section">
+      <h2>Co‑Partners</h2>
+      <table class="k-table" aria-label="Co‑partners">
+        <thead>
+          <tr><th>Name</th><th>Phone</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Joshua Chen</td><td><a href="tel:+15157158677">(515) 715‑8677</a></td></tr>
+          <tr><td>Marre Gattnar</td><td><a href="tel:+14159366305">(415) 936‑6305</a></td></tr>
+          <tr><td>Mert Iravul</td><td><a href="tel:+16172017016">(617) 201‑7016</a></td></tr>
+        </tbody>
+      </table>
     </section>
 
-    <section id="research" class="section">
-      <h2>Research & Updates</h2>
-      <p>Post PDFs or notes in a <code>docs/</code> folder and link them here. Example links:</p>
-      <ul>
-        <li><a href="docs/sample-research-note.pdf">Sample Research Note (PDF)</a></li>
-        <li><a href="docs/club-charter-public.pdf">Club Charter (Public Version)</a></li>
-      </ul>
-    </section>
-
-    <section id="disclosures" class="section card">
-      <h2>Disclosures</h2>
-      <p class="muted">This website is for educational purposes and to describe the activities of a private, member‑managed investment club. It is <strong>not</strong> an offer of securities, financial promotion, or investment advice to any person. The club does not provide personalized advice or manage client assets for compensation.</p>
-      <p class="muted">University names/logos, if referenced, indicate student affiliation only and do not imply endorsement.</p>
+    <section id="strategies" class="section card">
+      <h2>Past Strategies</h2>
+      <p class="muted">None published yet — this section will house post‑mortems and research notes as they’re finalized.</p>
     </section>
 
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-      <p class="muted">For research feedback and club participation only. We can’t discuss individual portfolios.</p>
+      <div class="contact-card card">
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:keystonepartnercontact@gmail.com">keystonepartnercontact@gmail.com</a></p>
+          <h3>Mailing Address</h3>
+          <p class="address">28 Dewolfe Street
+Cambridge, MA 02138</p>
+        </div>
+        <div>
+          <h3>General Inquiries</h3>
+          <p class="muted">For research feedback and club participation only. We can’t discuss individual portfolios.</p>
+          <p><a class="cta secondary" href="#partners">Call a co‑partner</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="disclosures" class="section card">
+      <h2>Disclosures</h2>
+      <p class="muted">Keystone Investment Partners is a private, member‑managed investment club. This site is for informational and educational purposes only. It is <strong>not</strong> an offer to buy or sell securities, a solicitation of clients, or personalized investment advice. Keystone does not provide advisory services to the public or accept compensation for advice.</p>
     </section>
 
     <footer>
-      <div>© <span id="y"></span> YOUR CLUB NAME • City, State • All rights reserved.</div>
+      <div>© <span id="y"></span> Keystone Investment Partners • Cambridge, MA</div>
       <div>Last updated: <span id="d"></span></div>
     </footer>
   </div>
@@ -117,3 +153,4 @@
   </script>
 </body>
 </html>
+
