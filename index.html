@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Student investment club — non‑commercial, educational site." />
+  <!-- Remove the next line if you want search engines to index your site -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>YOUR CLUB NAME — Investment Club</title>
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --bg:#ffffff; --accent:#0ea5e9; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:960px;margin:0 auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{font-weight:700;letter-spacing:.5px}
+    nav a{margin-left:16px;color:var(--muted)}
+    .hero{padding:56px 0}
+    h1{font-size:clamp(28px,5vw,40px);margin:0 0 8px}
+    h2{font-size:clamp(22px,4vw,28px);margin:24px 0 8px}
+    p.lead{color:var(--muted);max-width:65ch;margin:0}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media (min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid #e2e8f0;border-radius:14px;padding:18px}
+    ul{margin:0 0 0 18px}
+    footer{margin-top:48px;padding:24px 0;color:var(--muted);font-size:14px;border-top:1px solid #e2e8f0}
+    .badge{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid #e2e8f0;border-radius:999px;color:#0f172a;background:#f8fafc}
+    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid #0ea5e9;color:#fff;background:#0ea5e9}
+    .cta.secondary{background:#fff;color:#0ea5e9}
+    .muted{color:var(--muted)}
+    .section{padding:16px 0}
+    code{background:#f1f5f9;border-radius:6px;padding:2px 6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">YOUR CLUB NAME <span class="badge">Investment Club</span></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#how">How We Operate</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Learning Markets, Together</h1>
+      <p class="lead">A student-run investment club exploring public markets through collaborative research and shared decision‑making. Non‑commercial and educational.</p>
+      <div style="margin-top:16px">
+        <a class="cta" href="#research">Read Research</a>
+        <a class="cta secondary" href="#disclosures" style="margin-left:8px">Disclosures</a>
+      </div>
+    </section>
+
+    <section id="about" class="section grid">
+      <div class="card">
+        <h2>What We Do</h2>
+        <ul>
+          <li>Run paper and live portfolios owned by the partnership.</li>
+          <li>Study portfolio construction, risk, and behavioral finance.</li>
+          <li>Publish general, <em>not personalized</em>, educational research.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>What We Don’t Do</h2>
+        <ul>
+          <li>No client onboarding or outside-asset management.</li>
+          <li>No individualized investment advice.</li>
+          <li>No compensation for advice or referrals.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <h2>How We Operate</h2>
+      <p class="muted">We make decisions by member vote per our partnership agreement. Capital accounts are unitized for fairness; contributions and withdrawals are processed at current NAV. Trading is executed by authorized members only.</p>
+      <ul>
+        <li><strong>Meetings:</strong> Regular sessions to review research and votes.</li>
+        <li><strong>Custody:</strong> All assets held at a U.S. brokerage in the partnership’s name.</li>
+        <li><strong>Records:</strong> Minutes and member capital ledgers maintained internally.</li>
+      </ul>
+    </section>
+
+    <section id="research" class="section">
+      <h2>Research & Updates</h2>
+      <p>Post PDFs or notes in a <code>docs/</code> folder and link them here. Example links:</p>
+      <ul>
+        <li><a href="docs/sample-research-note.pdf">Sample Research Note (PDF)</a></li>
+        <li><a href="docs/club-charter-public.pdf">Club Charter (Public Version)</a></li>
+      </ul>
+    </section>
+
+    <section id="disclosures" class="section card">
+      <h2>Disclosures</h2>
+      <p class="muted">This website is for educational purposes and to describe the activities of a private, member‑managed investment club. It is <strong>not</strong> an offer of securities, financial promotion, or investment advice to any person. The club does not provide personalized advice or manage client assets for compensation.</p>
+      <p class="muted">University names/logos, if referenced, indicate student affiliation only and do not imply endorsement.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p class="muted">For research feedback and club participation only. We can’t discuss individual portfolios.</p>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> YOUR CLUB NAME • City, State • All rights reserved.</div>
+      <div>Last updated: <span id="d"></span></div>
+    </footer>
+  </div>
+  <script>
+    const now=new Date();
+    document.getElementById('y').textContent=now.getFullYear();
+    document.getElementById('d').textContent=now.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+  </script>
+</body>
+</html>
